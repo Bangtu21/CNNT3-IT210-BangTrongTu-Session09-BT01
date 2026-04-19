@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Giỏ hàng của bạn</h2>
+
+    <p th:text="${message}"></p>
+
+    <hr>
+
+    <h3>Danh sách sản phẩm:</h3>
+
+    <ul>
+        <li th:each="item : ${session.cart.products}"
+            th:text="${item}">
+        </li>
+    </ul>
+
+    <br>
+
+    <a th:href="@{/}">Quay lại</a>
+</body>
+</html>
