@@ -1,0 +1,6 @@
+Session09-BT01-Phần1
+- Đoạn code trên lại gây ra hiện tượng "mất trí nhớ" tại vì: giỏ hàng đang được lưu trong HttpServletRequest, mà request chỉ tồn tại trong phạm vi một lần
+	gửi yêu cầu từ client lên server. Khi thực hiện redirect:/checkout, trình duyệt sẽ tạo ra một request mới hoàn toàn, không còn liên quan đến request 
+	trước đó. Do đó, dữ liệu myCart đã lưu ở request cũ sẽ không còn tồn tại ở request mới, dẫn đến việc sang trang /checkout thì giỏ hàng luôn rỗng
+
+- Lỗi do cơ chế hoạt động của HttpServletRequest.
